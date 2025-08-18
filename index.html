@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Profile — Orange Minimal</title>
+  <style>
+    :root { --bg: #fff8f1; --accent: #ff7a00; --text: #1f2937; --muted: #6b7280; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      background: linear-gradient(180deg, var(--bg), #ffffff);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      width: min(720px, 92vw);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 16px;
+      padding: 28px 32px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      background: #fff;
+    }
+    .header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .badge {
+      background: var(--accent);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: .3px;
+      text-transform: uppercase;
+    }
+    h1 { margin: 8px 0 0; font-size: 28px; }
+    p { margin: .25rem 0; color: var(--muted); }
+    .hr { height: 1px; background: linear-gradient(to right, rgba(255,122,0,.35), rgba(255,122,0,.05)); margin: 16px 0; border: 0; }
+    .list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .item { padding: 14px 16px; border: 1px solid rgba(255,122,0,.25); border-radius: 12px; background: linear-gradient(180deg, rgba(255,122,0,.06), rgba(255,122,0,.02)); }
+    .label { font-size: 12px; text-transform: uppercase; letter-spacing: .3px; color: var(--muted); margin-bottom: 6px; }
+    .value { font-weight: 700; }
+    .footer { margin-top: 18px; font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; align-items: center; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .image {
+      display: block;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 16px auto;
+      border: 3px solid var(--accent);
+      background: rgba(255,122,0,.1);
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-label="Student info">
+    <div class="header">
+      <span class="badge">Student Profile</span>
+    </div>
+
+    <img src="https://file.garden/aGTEBk_kpAv-DrSA/photo_2025-08-18_15-06-07-removebg-preview(1).png" alt="Student photo placeholder" class="image">
+
+    <h1><!-- Name -->Nela Ryne Pangan</h1>
+    <p>Program and section details below.</p>
+
+    <div class="hr"></div>
+
+    <section class="list" aria-label="Details">
+      <div class="item">
+        <div class="label">Name</div>
+        <div class="value">Nela Ryne Pangan</div>
+      </div>
+      <div class="item">
+        <div class="label">Section</div>
+        <div class="value">FOPM01</div>
+      </div>
+      <div class="item" style="grid-column: 1 / -1;">
+        <div class="label">Program</div>
+        <div class="value">BSIT-O</div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <span>Made by nrcpangan</span>
+      <span>Updated: <time datetime="2025-08-18">Aug 18, 2025</time></span>
+    </div>
+  </main>
+</body>
+</html>
