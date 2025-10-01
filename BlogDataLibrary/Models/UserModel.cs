@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BlogDataLibrary.Models
-{
+﻿namespace BlogDataLibrary.Models
+{ 
     public class UserModel
     {
         public int Id { get; set; }

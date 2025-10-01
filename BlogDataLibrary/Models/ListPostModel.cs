@@ -1,5 +1,4 @@
-﻿
-namespace BlogDataLibrary.Models
+﻿namespace BlogDataLibrary.Models
 {
     public class ListPostModel
     {
@@ -11,4 +10,5 @@ namespace BlogDataLibrary.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
     }
+
 }
