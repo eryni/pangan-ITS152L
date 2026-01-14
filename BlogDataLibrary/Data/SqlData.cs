@@ -26,5 +26,20 @@ namespace BlogDataLibrary.Data
                                                                 true).FirstOrDefault();
             return result;
         }
+        public void Register(string username, string firstName, string lastName, string password)
+        {
+            _db.SaveData<dynamic>(
+                "dbo.spUsers_Register",
+                new { username, firstName, lastName, password },
+                connectionStringName,
+                true);
+        }
+        public void AddPost(PostModel post)
+        {
+            _db.SaveData("spPosts_Insert",
+                new { post.UserId, post.Title, post.Body, post.DateCreated },
+                connectionStringName,
+                true);
+        }
     }
 }

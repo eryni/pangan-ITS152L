@@ -11,6 +11,8 @@ namespace BlogTestUI
         {
             SqlData db = GetConnection();
             Authenticate(db);
+            Register(db);
+            AddPost(db);
 
             Console.WriteLine("Press Enter to exit...");
             Console.ReadLine();
@@ -55,5 +57,42 @@ namespace BlogTestUI
                 Console.WriteLine($"Welcome, {user.UserName}");
             }
         }
+        public static void Register(SqlData db)
+        {
+            Console.Write("Enter new username: ");
+            var username = Console.ReadLine();
+
+            Console.Write("Enter new password: ");
+            var password = Console.ReadLine();
+
+            Console.Write("Enter first name: ");
+            var firstName = Console.ReadLine();
+
+            Console.Write("Enter last name: ");
+            var lastName = Console.ReadLine();
+
+            db.Register(username, firstName, lastName, password);
+        }
+        private static void AddPost(SqlData db)
+        {
+            UserModel user = GetCurrentUser(db);
+
+            Console.Write("Title: ");
+            string title = Console.ReadLine();
+
+            Console.WriteLine("Write body: ");
+            string body = Console.ReadLine();
+
+            PostModel post = new PostModel
+            {
+                Title = title,
+                Body = body,
+                DateCreated = DateTime.Now,
+                UserId = user.Id
+            };
+
+            db.AddPost(post);
+        }
+
     }
 }

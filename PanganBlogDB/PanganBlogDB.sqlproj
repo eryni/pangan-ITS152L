@@ -64,6 +64,8 @@
     <Build Include="dbo\tables\Users.sql" />
     <Build Include="dbo\Tables\Posts.sql" />
     <Build Include="StoredProcedures\spUsers_Authenticate.sql" />
+    <Build Include="StoredProcedures\spUsers_Register.sql" />
+    <Build Include="StoredProcedures\spPosts_Insert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PanganBlogDB.publish.xml" />
