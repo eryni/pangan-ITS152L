@@ -1,0 +1,6 @@
+@M1_PANGAN_HostAddress = http://localhost:5015
+
+GET {{M1_PANGAN_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
