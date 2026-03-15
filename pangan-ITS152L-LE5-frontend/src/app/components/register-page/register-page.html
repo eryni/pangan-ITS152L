@@ -1,0 +1,7 @@
+<form (ngSubmit)="onSubmit()">
+  <input type="text" name="username" [(ngModel)]="form.username" placeholder="Username" required>
+  <input type="password" name="password" [(ngModel)]="form.password" placeholder="Password" required>
+  <input type="text" name="firstName" [(ngModel)]="form.firstName" placeholder="First Name" required>
+  <input type="text" name="lastName" [(ngModel)]="form.lastName" placeholder="Last Name" required>
+  <button type="submit">Register</button>
+</form>

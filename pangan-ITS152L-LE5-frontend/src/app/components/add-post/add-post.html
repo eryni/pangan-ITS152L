@@ -1,0 +1,40 @@
+<div class="form-card" style="max-width: 650px;" *ngIf="authService.isLoggedIn">
+  <h2>Create New Article</h2>
+  
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Article Title</label>
+      <input 
+        type="text" 
+        id="title" 
+        name="title" 
+        [(ngModel)]="form.title" 
+        placeholder="Enter a catchy title..." 
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="body">Content</label>
+      <textarea 
+        id="body" 
+        name="body" 
+        [(ngModel)]="form.body" 
+        rows="12" 
+        placeholder="What's on your mind?" 
+        required></textarea>
+    </div>
+
+    <div style="display: flex; gap: 10px;">
+      <button type="submit" class="btn">Publish Post</button>
+      <a routerLink="/" class="btn" style="background: #95a5a6; text-decoration: none;">Cancel</a>
+    </div>
+  </form>
+</div>
+
+<div class="form-card" style="text-align: center; max-width: 450px;" *ngIf="!authService.isLoggedIn">
+  <div class="card">
+    <h2>Access Denied</h2>
+    <p style="margin-bottom: 20px; color: #7f8c8d;">Please login to continue and create a post.</p>
+    <a routerLink="/login" class="btn" style="width: 100%; text-decoration: none;">Go to Login</a>
+  </div>
+</div>

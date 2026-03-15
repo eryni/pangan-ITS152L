@@ -1,0 +1,9 @@
+<div class="card" *ngIf="post">
+  <h2>{{ post.title }}</h2>
+  <div class="meta">
+    Posted by {{ post.firstName }} {{ post.lastName }} on {{ post.dateCreated | date:'fullDate' }}
+  </div>
+  <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+  <p style="line-height: 1.6; white-space: pre-wrap;">{{ post.body }}</p>
+  <a routerLink="/" class="btn" style="margin-top: 20px; background: #95a5a6;">Back to Feed</a>
+</div>

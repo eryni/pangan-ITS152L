@@ -1,0 +1,23 @@
+<nav class="navbar">
+  <div class="nav-brand">
+    {{ auth.isLoggedIn ? auth.currentUser + "'s Blog" : "BlogPortal" }}
+  </div>
+
+  <div class="nav-links">
+    <a routerLink="/">Home</a>
+    
+    <span *ngIf="auth.isLoggedIn">
+      <a routerLink="/add-post">New Post</a>
+      <a (click)="onLogout()" style="cursor: pointer; color: #e74c3c; margin-left: 20px;">Logout</a>
+    </span>
+    
+    <span *ngIf="!auth.isLoggedIn">
+      <a routerLink="/login">Login</a>
+      <a routerLink="/register">Register</a>
+    </span>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
